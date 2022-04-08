@@ -1,0 +1,33 @@
+\section{Machine Learning}
+Machine Learning (ML) is the practice of estimating models that make predictions on `new' data using available data. This is especially helpful when the actual model is very complex and no known algorithms can discover such model or they take large amount of time or other resources. 
+\subsection{Machine Learning Paradigms}
+\subsubsection{Supervised ML}
+In supervised ML, we `supervise' the model by training it on a labelled data set. The data set contains generally large number of `testcases' where both input value and the correct output value is specified. The applications of this approach includes
+\paragraph{Classification Problems}
+In such problems, the model classifies the input into some property. This classification is either qualitative (Categorical) or quantitative (Numerical) .
+
+Examples of qualitative property -- gender, species, bug severity.
+
+Examples of quantitative property -- age, height, count of objects.
+\paragraph{Regression Problems}
+In these problems, the model estimates a relation between the output variables using the given input variables (generally independent)
+\subsubsection{Unsupervised ML}
+In unsupervised ML, there is no labelled data, the model takes only input variables. The model will then find a relation between input variables. The biggest benefit of unsupervised versus supervised ML is its ability to gain knowledge without needing expensive labelled data. Its applications includes
+\paragraph{Clustering}
+Clustering is used to group given data by finding a pattern between them
+\paragraph{Association}
+Association is used to discover relations between input variables of some data set.
+\subsubsection{Semi-Supervised ML}
+Here, some part of data is labelled whereas the other part is not. So, using unsupervised techniques a model can label unlabelled data and feed it into a supervised model.
+\subsubsection{Reinforcement Learning}
+Reinforcement Learning (RL) algorithms are interested in learning the behaviour of intelligent agents in an environment which maximises their total reward. The focus is on the explore-exploit trade-off, whether to explore other options or exploit the current option. RL has huge potential applications some of which include marketing and advertising, game solving, self driving cars.
+\subsection{Issues with ML}
+\begin{itemize}
+	\item Lack of good quality data sets.
+	\item Possibilty of errors e.g., underfitting or overfitting possible.
+	\item Result are sensitive to small pertubations.
+	\item Safety and Privacy concerns exists.
+	\item Lack of explainability of model.
+	\item Slow process. Training large data sets eates up time.
+\end{itemize}
+Quantum Computing (QC) can improve a lot of these issues.

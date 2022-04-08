@@ -1,0 +1,30 @@
+\section{Quantum Algorithm for Linear Systems of Equations}{\label{sec:qalse}}
+\subsection{Problem}
+Given a matrix $A$ ($N\times N$ and condition number $\kappa$) and a vector $\vec{b}$, let $\vec{x}$ be the solution of $A\vec{x} = \vec{b}$. Consider, a situation where the actual $\vec{x}$ is not needed and the problem is to calculate $\vec{x}^*M\vec{x}$ for some matrix $M$.
+
+The fastest known classical algorithm is $N\sqrt{\kappa}$. But \cite{Harrow_2009} shows a quantum approach when the runtime is polynomial in $\log(N)$ and $\kappa$.
+\subsection{Outline of the approach}
+First, represent $\vec{b}$ as a quantum state
+\[\bra{b}=\sum_{i=1}^N b_i\ket{i}.\]
+Next if $A$ is Hermitian, construct a unitary operator $e^{iAt}$ by transforming $A$. Here, $A$ is assumed as efficiently row computable and $s$ sparse.
+If $A$ is not Hermitian then construct \[\tilde{A}=\begin{bmatrix}
+0 & A\\
+A^* & 0
+\end{bmatrix}\rightarrow \tilde{A} \vec{y}= \tilde{A}=\begin{bmatrix}
+\vec{b}&0
+\end{bmatrix}\rightarrow y = \begin{bmatrix}
+0&\vec{x}
+\end{bmatrix}\]
+where $\tilde{A}$ is Hermitian.
+
+Then, we apply $e^{iAt}$ to $\ket{b}$ to find the linear combinations at each time $t$. 
+This is followed by decomposing $\ket{b}$ in the eigenspace using phase estimation \cite{Cleve_1998} to get the eigenvalues.
+
+Let $\ket{u_j}$ be the eigenvectors of $A$ with eigenvalues $\lambda_j$.
+Now, the system's state is close to \[\sum_{j=1}^N \beta_j\ket{u_j}\ket{\lambda_j} \text{ and } \ket{b} =\sum_{j=1}^N \beta_j\ket{u_j}.\]
+So, a linear map say $B$ which takes $\ket{\lambda_j}$ to a multiple of $\lambda_j^{-1}\ket{\lambda_j}$ is required to undo the phase estimation to get a state proportional to \[\sum_{j=1}^N \beta_j\lambda_j^{-1}\ket{u_j} = A^{-1}\ket{b} = \ket{x}\]
+% \[\ket{\psi_0} = \sqrt{\frac{2}{T}}\sum_{\tau=0}^{T-1}{\sin\left(\frac{\pi\left(\tau+\mfrac{1}{2}\right)}{T}\right)}\ket{\tau}  \quad\text{for some large $T$}.\]
+
+% The $\ket{\psi_0}$ amplitudes are selected to minimize a loss function.
+Finally, the measurement with expectation value $\braket{x|M|x}$ gives the answer.
+% Next, the conditional Hamiltonian evolution is applied 

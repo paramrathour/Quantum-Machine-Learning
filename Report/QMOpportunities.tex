@@ -1,0 +1,43 @@
+\section{Opportunities in Quantum-Assisted Machine Learning (QAML)}
+\subsection{Unsupervised Learning -- Quantum Devices for Sampling}
+Today, there is an incredible amount of unlabelled data available. Courtesy internet, satellite and medical imaging, stock market time series and more due to ever increasing use of computers. There is a need to extract patterns within such data -- scientists do not always know what patterns look for, these patterns are essential for the development of science and humanity as a whole. But, it is beyond the human capacity to label all this data. So, a need arises for a machine which is capable of extracting order from disorder.
+
+\paragraph{Generative Model}  Generative Model can learn the joint probability among the variables. If this is achieved, similar data as the training set can be generated. A popular design of such models is using layers of stochastic `hidden variables' . It has shown positive results for high-dimensional data, with correct inference of multi-modal distributions over it. Sadly, the exact guess is not possible for non-trivial topologies. Here, the intractable step is computation of expectation values under a complex distribution and this step is a part of each iteration and data point. Markov chain Monte Carlo (MCMC) techniques are being used but they face various issues e.g., slow mixing problem. QAML can possibly solve this problem as they are capable of sampling from probability distributions. Quantum Gibbs distributions are such alternative to MCMC.
+
+\subsection{Cognitive Sciences - Exploiting Datasets}
+A quantum model can significantly reduce the computational resources, e.g, memory needed to model a data set. So, real-life data sets where quantum model is simple compared with classical models must be identified. 
+
+Cognitive Sciences has candidates to be such dataset, let's discuss one such example
+\subsubsection{The Two-Stage Gambling Paradigm}
+In the first stage, people were required to gamble. If they win they get $x$ amount of money, if they lose they lose $y$ amount of money (both are equally likely).
+
+Before learning about the results, participants were asked whether they will `plan' to gamble again (if they win and if they lose). Then after learning the first stage results, final decision was made about playing the second stage was made. The observations are shown in \ref{tab:ttsgp}. `Gamble' column has the payoff. Plan Win (Lose) is the fraction of people planning to take the second stage before learning if they Win (Lose) the first stage. Final Win (Lose) is the fraction of people planning to take the second stage after learning they Win (Lose) the first stage.
+
+As visible in \ref{tab:ttsgp}, the results are dynamically inconsistent. The participants changed their plans; whether they won or lose they thought of rejecting the idea of second stage. This violates the law of total probability!
+\begin{table}[H]
+\centering
+\begin{tabular}{cccccc}
+\hline
+\multicolumn{2}{c}{Gamble} & \multicolumn{4}{c}{Choice Proportions} \\ \hline
+Win & Loss & Plan Win & Plan Loss & Final Win & Final Loss \\ \hline
+0.8 & 1 & 0.25 & 0.26 & 0.2 & 0.35 \\
+0.8 & 0.4 & 0.76 & 0.72 & 0.69 & 0.73 \\
+\multicolumn{1}{c}{2} & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{0.68} & \multicolumn{1}{c}{0.68} & \multicolumn{1}{c}{0.6} & \multicolumn{1}{c}{0.75} \\
+2 & 0.4 & 0.84 & 0.86 & 0.76 & 0.89\\\hline
+\end{tabular}
+\vspace{1em}
+\caption{The Two-Stage Gambling Paradigm}
+\label{tab:ttsgp}
+\end{table}
+Let's see, the way this way resolved using Quantum Model
+\paragraph{The Quantum Model}
+Unlike the classical models which uses inconsistent utility functions for the explanation of behaviour; the quantum model assumes a consistent utility function is used by participants for both plan and final choices and it also considers the first stage results. Here, the dynamic inconsistency emerges from \emph{uncertainty} in the first stage results which is solved at the second stage.
+
+Using quantum theory, this game has 4 events $\{WA, WR, LA, LR\}$ where $W (L)$ stands for win (lose) in first stage and $A (R)$ stands for accept (reject) the second round. This represent the four-dimensional vector space with basis vectors as $\{\ket{WA}, \ket{WR}, \ket{LA}, \ket{LR}\}$. The person is actually in a superposition of these states $\qbit = \psi_{WA}\ket{WA}, \psi_{WR}\ket{WR}, \psi_{LA}\ket{LA}, \psi_{LR}\ket{LR}$ where $|\psi_{WA}|^2$ is the probability that the person belives he won in the first stage and will accept the second stage.
+
+The initial state is $\psi_0$ which has some distribution over these 4 amplitudes. As, the first stage result is not known we can take a uniform distribution, i.e., $|\psi_{ij}| = \frac{1}{2}$ for all 4 $ij$ pairs. \emph{Uncertainty} in the first stage results is solved at the second stage after learning the result. Now that state is $\psi_1 = \psi_W = \ket{1100}$ ($\psi_L = \ket{0011}$) if win (lose). 
+
+The payoffs can be achieved using a unitary matrix which rotates $\psi$ towards the gamble or away from it. The final state is \[\psi_D = U\psi\]% \quad \text{where} \quad U = u()
+where $U$ will depend on the utilary functions. The  inconsistency can be seen using the projection matrix.
+
+Such identification of quantum-like behaviours will be a game changer. Even better, it will make quantum technologies unique in their own applications and thus becoming irreplacable.

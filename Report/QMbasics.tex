@@ -1,0 +1,71 @@
+\section{Quantum Mechanics for Quantum Computation}
+A quantum bit abbreviated as \emph{qubit}, is the fundamental data unit of a quantum computer. The notion of qubit is analogous to bit from the classical computers. A bit has two states 0 or 1 whereas a qubit $\qbit$ coexists in the states $\qz$ and $\qo$ i.e. it $\qbit$ is a linear combination $\qz$ and $\qo$,
+\begin{equation}
+\qbit = \alpha\qz + \beta\qo.
+\end{equation}
+$\qz$ and $\qo$ are unit vectors and form an orthonormal basis. They are standard-basis vectors also denoted by
+\begin{equation*}
+\qz = \begin{bmatrix}1\\0\end{bmatrix} \quad \text{and} \quad \qo = \begin{bmatrix}0\\1\end{bmatrix}.
+\end{equation*}
+If $\qbit = \alpha\qz + \beta\qo$ and $\qbitv = \gamma\qz + \delta\qo$ and then
+\begin{definition}[Inner Product] \[\braket{\psi|\varphi} = \begin{bmatrix}\alpha^* & \beta^*\end{bmatrix}\begin{bmatrix}\gamma\\\delta\end{bmatrix}=\alpha^*\gamma+\beta^*\delta\]
+\end{definition}
+where $^*$ is the complex conjugate operation.
+\begin{definition}[Outer Product] \[
+\ket{\psi}\bra{\varphi} =
+\begin{bmatrix}\alpha\\\beta\end{bmatrix}
+\begin{bmatrix}\gamma^*&\delta^*\end{bmatrix}
+=\begin{bmatrix}\alpha\gamma^*&\alpha\delta^*\\\beta\gamma^*&\beta\delta^*\end{bmatrix}\]
+\end{definition}
+% \begin{definition}[Dual Vector of $\bra{\psi}$] \[\ket{\psi}\]
+% \end{definition}
+\begin{definition}[Norm of a vector] \[\|\bra{\psi}\| = \sqrt{\braket{\psi|\psi}}\]
+\end{definition}
+\subsection{Postulates of Quantum Mechanics}
+\begin{definition}[Hilbert Space]
+A vector space with distance function and inner product among it's elements.
+\end{definition}
+\begin{definition}[State Space]
+The Hilbert space corresponding to an isolated physical system.
+\end{definition}
+\begin{definition}[State Vector]
+The state of the system.
+\end{definition}
+\paragraph{\textbf{State} \textbf{Space}} The state vector can be completely represented by a unit vector in the state space.
+\begin{definition}[Hermitian adjoint]
+$H$ and $H^*$ are Hermitian conjugates of each other when 
+\[\langle \Phi | H | \Psi \rangle  = \langle H^* \Phi | \Psi \rangle.\]
+\end{definition}
+\begin{definition}[Hermitian operator]
+A Hermitian operator $H$ is its own Hermitian conjugate, i.e $H = H^*$.
+\end{definition}
+\begin{definition}[Observable]
+A Hermitian operator $\mathcal{O}$ which describes the projective measurement. It acts upon the state space of the system to be measured and is represented as 
+\[\mathcal{O} = \sum_{\lambda}\lambda P_\lambda\]
+and $P_\lambda$ is the \emph{projector} with eigenvalue $\lambda \in$ eigenspace of $\mathcal{O}$.
+\end{definition}
+\begin{definition}[Unitary Transformation]
+A tranformation that preserves inner product. So, a unit vector remains a unit vector after the tranformation. It is denoted by $U$ and it satisfies
+\[U^*U = UU^* = I.\]
+\end{definition}
+\paragraph{\textbf{Measurement}}
+A measurement on $\mathcal{O}$ will result in the eigenvalues $\lambda$ with the probability of collapsing to $\lambda$ is \[p_\lambda = \|P_\lambda\bra{\psi}\|^2 = \braket{\psi|P_\lambda|\psi}.\]
+resulting in the irreversibly collapse of the state of system to
+\[\frac{1}{\sqrt{p_\lambda}P_\lambda\bra{\psi}}.\]
+\paragraph{\textbf{Evolution I}}
+The system evolution is governed by the Schrödinger's equation
+\[H\bra{\psi(t)}=i\hbar\frac{\d}{\d t}\bra{\psi(t)}.\]
+\paragraph{\textbf{Evolution II}}
+If $\bra{\psi_0}, \bra{\psi_1}$ describes the state of system at times $t_0, t_1$ respectively then the evolution of system depends only on $t_0$ and $t_1$. It is given by
+\[\bra{\psi_1} = U\bra{\psi_0}.\]
+So far, we have studied one-qubit systems. For multi-qubit systems we introduce the following notation.
+\begin{definition}[Tensor Product (aka Kronecker Product)]
+For a given $m,n$ dimensional vector spaces $V,W$. The tensor product of $V$ with $W$ (denoted by $V\otimes W$) is an $mn$ dimensional vector spaces with elements are linear combinations of tensor products $\bra{v}\otimes\bra{w}$.
+\end{definition}
+We can also define the tensor product of linear operators $A,B$ over vector spaces $V,W$ as
+\[(A\otimes B)(\bra{v}\otimes\bra{w})= A\bra{v}\otimes B\bra{w}.\]
+\paragraph{\textbf{Composition}}
+For $n$ isolated systems with states $\bra{\psi_0}, \bra{\psi_1}, \ldots, \bra{\psi_{n-1}}$, the state of the composite system is given by $\bra{\psi_0}\otimes\bra{\psi_1}\otimes\cdots\bra{\psi_{n-1}}$
+% \subsection{Quantum Circuits}
+
+Now, let's look at the power of quantum algorithms with an example.

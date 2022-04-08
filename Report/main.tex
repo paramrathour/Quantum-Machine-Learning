@@ -1,0 +1,64 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,mathtools,nccmath}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{braket}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\newcommand{\qbit}{\ensuremath|\psi\rangle}
+\newcommand{\qbitv}{\ensuremath|\varphi\rangle}
+\newcommand{\qz}{\ensuremath|0\rangle}
+\newcommand{\qo}{\ensuremath|1\rangle}
+\renewcommand{\d}{\, \mathrm{d}}
+
+\newtheorem{definition}{Definition}[section]
+
+\begin{document}
+\title{Quantum Machine Learning\\
+{\Large Opportunities and Challenges}
+\thanks{Prof. Debanjan Bhowmik}
+}
+\author{\IEEEauthorblockN{%1\textsuperscript{st}
+Rathour Param Jitendrakumar}
+\IEEEauthorblockA{190070049\\\textit{Department of Electrical Engineering} \\
+\textit{Indian Institute of Technology Bombay}\\
+paramrathour@ee.iitb.ac.in}
+}
+
+\maketitle 
+
+\begin{abstract}
+% Though there are advancements in quantum computing technology, 
+Nowadays, a general purpose quantum computer seems closer to reality than ever before, yet, it is so far. Can the near-term quantum technologies create an impact on ML and guide us towards quantum supremacy?
+This report contains an introduction to machine learning and quatum mechanics. We also discuss a quantum algorithm to solve linear system of equations and then move onto discussing Quantum-Assisted Machine Learning, its the opportunities and challenges in the near-term future.
+\end{abstract}
+\begin{IEEEkeywords}
+quantum computing, machine learning, quantum machine learning, quantum-assisted machine learning, near-term quantum computers, quantum-assisted Helmholtz machines
+\end{IEEEkeywords}
+
+\section{Introduction}
+Quantum Computing truly has the potential but, when will it live up to the (rising) expectations?
+There has been a steady progress in this field, from increasing qubits to the increase in algorithms and design techniques. Popular quantum computing algorithms, e.g, Shor's algorithm, Grover's algorithm, Deutsch-Jozsa, BB84 Protocol, Quantum Fourier Transform and others have all been instrumental achievements in their fields. But in Machine Learning there is no such defining algorithm yet. Is their a feasible Quantum Approach for Machine Learning (ML) in near-term future? The estimated number of qubits in near-term future is 100-1000 which unfortunately is not sufficient for large ML tasks. We will focus on quantum approaches on a very promising field of unsupervised ML after getting comfortable with all the basics.
+\input{ML.tex}
+\input{QMbasics.tex}
+\input{QMapplication.tex}
+% \clearpage
+\input{QMFuture.tex}
+\input{QMOpportunities.tex}
+% \clearpage
+\input{QMChallenges.tex}
+\section{Quantum-Assisted Helmholtz Machine (QAHM)}
+A hybrid quantum–classical ML which can potentilly handle real-world datasets. Its made of a  generator network and a recognition network using the notion of stochastic hidden variables. Classification can also be implemented in QAHM.
+% \clearpage
+% \section*{Acknowledgment}
+\bibliographystyle{ieeetr}
+\nocite{*}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+
+\bibitem{Harrow_2009}
+A.~W. Harrow, A.~Hassidim, and S.~Lloyd, ``Quantum algorithm for linear systems
+  of equations,'' {\em Physical Review Letters}, vol.~103, oct 2009.
+
+\bibitem{Cleve_1998}
+R.~Cleve, A.~Ekert, C.~Macchiavello, and M.~Mosca, ``Quantum algorithms
+  revisited,'' {\em Proceedings of the Royal Society of London. Series A:
+  Mathematical, Physical and Engineering Sciences}, vol.~454, pp.~339--354, jan
+  1998.
+
+\bibitem{Perdomo_Ortiz_2018}
+A.~Perdomo-Ortiz, M.~Benedetti, J.~Realpe-G{\'{o}}mez, and R.~Biswas,
+  ``Opportunities and challenges for quantum-assisted machine learning in
+  near-term quantum computers,'' {\em Quantum Science and Technology}, vol.~3,
+  p.~030502, jun 2018.
+
+\bibitem{book:2382813}
+C.~L. Franklin De Lima~Marquezino, Renato~Portugal, {\em A Primer on Quantum
+  Computing}.
+\newblock SpringerBriefs in Computer Science, Springer International
+  Publishing, 1~ed., 2019.
+
+\bibitem{Benedetti_2018}
+M.~Benedetti, J.~Realpe-G{\'{o}}mez, and A.~Perdomo-Ortiz, ``Quantum-assisted
+  helmholtz machines: A quantum{\textendash}classical deep learning framework
+  for industrial datasets in near-term devices,'' {\em Quantum Science and
+  Technology}, vol.~3, p.~034007, may 2018.
+
+\bibitem{Busemeyer}
+J.~Busemeyer, Z.~Wang, and R.~Shiffrin, ``Bayesian model comparison favors
+  quantum over standard decision theory account of dynamic inconsistency,''
+  {\em Decision}, vol.~2, pp.~1--12, 01 2015.
+
+\end{thebibliography}

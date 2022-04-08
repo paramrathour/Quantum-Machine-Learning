@@ -1,0 +1,16 @@
+\section{Challenges in Quantum-Assisted Machine Learning}
+\subsection{Compatibility Issues in Hybrid Tech}
+Information sharing between the classical and quantum might be a challenge, as the samples should from both models should match. In training of restricted Boltzmann machines,  stochastic gradient descent algorithm that performs parameter updates requires two major	component: `positive phase' which can be estimated efficiently using classical sampling and the `negative phase' has to be assisted with quantum sampling. It is necessary to match and control all the parameters used for describing probability distributions of both the models as the components  are part of the same equation and originate from same model.
+A lot depends on  Gibbs distribution temperature as that is the sampling source. This temperature depends on many factors so it is not completely under our control. This challenge can be resolved using hardware that can create many quantum Gibbs states at anytime, but this may open up other issues (See \ref{sec:rn}). A better approach is to carry out a proper estimation of temperature, so that the techniques can be restarted.
+\subsection{ Robustness to Noise}{\label{sec:rn}}
+Creating  quantum Gibbs states with a quantum annealer is a very complicated process due to intrinsic noise in parameters of programming. Dynamical effects and freezing on quantum distributions leads to non-equilibrium distributions away from required. This intrinsic noise can anyway shift the state away from desired state. Seeding quantum devices using  classical Gibbs samplers was a suggested solution, but its major disadvantage is that the model must have a specific form irrespective of the design of the quantum device otherwise there would be a lot of post-processing.
+
+Fully-visible Boltzmann machine (FVBM) is a potential near-term solution. Here, we assume that Gibbs-like distribution sends samples but actually the model is working at first and second moment statistics level. Actually, if there is a  positive projection in the direction of actual gradient, stochastic gradient descent's  estimated gradients will work.
+
+A drawback in this approach is that a same device needs to be used for ML tasks.
+\subsection{The Curse of Limited Connectivity}
+The curse of limited connectivity is a problem of qubit-qubit interactions not on-device which has an additional computational overhead and of setting the parameters to ensure correct sampling and mapping.
+\subsection{Complex Dataset Representation}
+Common datasets such as images have a large amount of non-binary variables. A simple binarization of data  will rapidly eat up 100-1000 qubits. So, instead QAML algorithms do amplitude coding. But this a slow process as just reading all amplitudes will effect speed.
+
+\emph{Semantic Binarization} may be useful, where the encoding is a abstract binary representations of continuous variables. Possibly, implemented using hybrid models.
